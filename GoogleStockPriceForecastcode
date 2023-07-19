@@ -586,3 +586,36 @@ print(ensemble_df)
 
 ################################################################################
 
+
+# Get the current date
+current_date = datetime.today()
+end_date = current_date
+
+# Format the end_date in 'YYYY-MM-DD' format
+end_date_str = end_date.strftime('%Y-%m-%d')
+
+# Get Google stock data
+data = yf.download('GOOGL', start='2013-07-14', end=end_date_str)
+
+# Reset index to make 'Date' a column
+data.reset_index(inplace=True)
+
+# Load the first dataframe
+df1 = data
+
+# Reduce the dataframe to just the 'Date' and 'Close' columns
+df1_reduced = df1[['Date', 'Close']]
+
+# Load the second dataframe
+df2 = ensemble_df
+
+# Rename the 'Ensemble_Predictions' column to 'Close' in df2
+df2.rename(columns={'Ensemble_Predictions': 'Close'}, inplace=True)
+
+# Combine the dataframes so they follow on from each other
+combined_df = pd.concat([df1_reduced, df2], ignore_index=True)
+
+# Display the combined dataframe
+print(combined_df)
+
+combined_df.to_csv('insert file path and file name', index=False)
