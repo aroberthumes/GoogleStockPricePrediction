@@ -74,8 +74,6 @@ After installation, navigate to the project directory and run the Python scripts
 
 The application displays an interactive plot of historical and predicted Google stock prices. The raw data of the stocks and indices for the selected number of days is also shown. 
 
-The final output of the project is a CSV file containing the predicted Google stock prices for the next 365 days, which includes the predictions from both the LSTM and XGBoost models.
-
 ## Note
 
 This project is for educational purposes and should not be used for actual trading. Please do your own research before making any investment decisions.
