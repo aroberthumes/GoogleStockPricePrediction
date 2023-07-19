@@ -1,0 +1,6 @@
+pandas==2.0.3
+plotly==5.15.0
+streamlit==1.24.1
+yfinance==0.2.24
+git+https://github.com/streamlit/files-connection
+gcsfs==2023.6.0
