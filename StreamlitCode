@@ -13,7 +13,7 @@ data_googl = load_data('GOOGL')
 data_indices = load_data(['^IXIC', '^DJI', '^GSPC'])
 
 # Assuming ensemble_df is loaded from a CSV file
-ensemble_df = pd.read_csv('C:/Users/arobe/Documents/ensemble_df.csv')
+ensemble_df = pd.read_csv('insert csv file path here')
 ensemble_df = ensemble_df.rename(columns={'Ensemble_Predictions': 'Close'})
 ensemble_df['Date'] = pd.to_datetime(ensemble_df['Date'])
 
